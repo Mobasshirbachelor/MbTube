@@ -1,0 +1,419 @@
+*
+/* navbar */
+
+body {
+    height: 100%;
+    margin: 0;
+    padding: 40px 30px;
+    font-family: 'Roboto', Helvetica, sans-serif;
+    font-size: 1rem;
+    line-height: 1.2;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    max-height: calc(100vh - 9rem);
+    overflow-y: auto;
+}
+
+header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    overflow: hidden;
+}
+
+.header__button {
+    z-index: 6;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 0;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    top: -18px;
+    outline: none;
+    background-color: red;
+}
+
+.header__button[data-open="true"] {
+    background-color: white;
+    animation-name: scale;
+    animation-duration: 300ms;
+    animation-timing-function: ease;
+}
+
+@keyframes scale {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(100%);
+    }
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: normal;
+    margin: 0;
+    margin-bottom: 3rem;
+}
+
+.header__nav {
+    background-color: black;
+    position: fixed;
+    overflow: hidden;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    visibility: hidden;
+    clip-path: circle(var(--radius) at calc(100% - 55px) 47px);
+}
+
+.header__nav[data-active="true"] {
+    visibility: visible;
+}
+
+.header__menu {
+    padding: 0;
+    margin: 0;
+}
+
+.header__menu>.header__menu-item {
+    font-size: 10vh;
+}
+
+.header__menu>.header__menu-item:not(:last-of-type) {
+    margin-bottom: 0.1em;
+}
+
+.header__menu-item a {
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+.header__menu-item a:hover {
+    font-style: italic;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+* {
+    box-sizing: border-box;
+}
+
+h3 {
+    margin: 10px 0;
+}
+
+h6 {
+    margin: 5px 0;
+    text-transform: uppercase;
+}
+
+p {
+    font-size: 14px;
+    line-height: 21px;
+}
+
+.card-container {
+    background-color: #231E39;
+    border-radius: 5px;
+    box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0.75);
+    color: #B3B8CD;
+    padding-top: 30px;
+    position: relative;
+    width: 350px;
+    max-width: 100%;
+    text-align: center;
+}
+
+.card-container .pro {
+    color: #231E39;
+    background-color: #FEBB0B;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 3px 7px;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+}
+
+.card-container .round {
+    border: 1px solid #03BFCB;
+    border-radius: 50%;
+    padding: 7px;
+}
+
+button.primary {
+    background-color: #03BFCB;
+    border: 1px solid #03BFCB;
+    border-radius: 3px;
+    color: #231E39;
+    font-family: Montserrat, sans-serif;
+    font-weight: 500;
+    padding: 10px 25px;
+}
+
+button.primary.ghost {
+    background-color: transparent;
+    color: #02899C;
+}
+
+.skills {
+    background-color: #1F1A36;
+    text-align: left;
+    padding: 15px;
+    margin-top: 30px;
+}
+
+.skills ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.skills ul li {
+    border: 1px solid #2D2747;
+    border-radius: 2px;
+    display: inline-block;
+    font-size: 12px;
+    margin: 0 7px 7px 0;
+    padding: 7px;
+}
+
+
+/* navbar end */
+
+
+/* search form */
+
+.search-form {
+    display: block;
+    margin-bottom: 15px;
+}
+
+.results li {
+    padding: 10px 0;
+    border-bottom: 1px #ccc dotted;
+    overflow: auto;
+}
+
+.list-left {
+    float: left;
+    width: 20%;
+}
+
+.list-left img {
+    width: 100%;
+    padding: 3px;
+    border: solid #ccc 1px;
+}
+
+.list-right {
+    float: right;
+    width: 78%;
+}
+
+.cTitle {
+    color: #dd2826;
+}
+
+.button-container {
+    margin-top: 25px;
+}
+
+.paging-button {
+    background: red;
+    padding: 8px 13px;
+    border: #ccc 1px solid;
+    border-radius: 5px;
+    color: #333;
+    margin: 10px;
+    cursor: pointer;
+}
+
+
+/* end search form */
+
+
+/* search box  */
+
+body {
+    background: #212129;
+}
+
+ ::selection {
+    background: #212129;
+}
+
+.search-wrapper {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 30%;
+    left: 50%;
+}
+
+.search-wrapper.active {}
+
+.search-wrapper .input-holder {
+    height: 70px;
+    width: 70px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0);
+    border-radius: 6px;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+}
+
+.search-wrapper.active .input-holder {
+    width: 450px;
+    border-radius: 50px;
+    background: rgba(0, 0, 0, 0.5);
+    transition: all .5s cubic-bezier(0.000, 0.105, 0.035, 1.570);
+}
+
+.search-wrapper .input-holder .search-input {
+    width: 100%;
+    height: 50px;
+    padding: 0px 70px 0 20px;
+    opacity: 0;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background: transparent;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    font-family: "Open Sans", Arial, Verdana;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #FFF;
+    transform: translate(0, 60px);
+    transition: all .3s cubic-bezier(0.000, 0.105, 0.035, 1.570);
+    transition-delay: 0.3s;
+}
+
+.search-wrapper.active .input-holder .search-input {
+    opacity: 1;
+    transform: translate(0, 10px);
+}
+
+.search-wrapper .input-holder .search-icon {
+    width: 70px;
+    height: 70px;
+    border: none;
+    border-radius: 6px;
+    background: #FFF;
+    padding: 0px;
+    outline: none;
+    position: relative;
+    z-index: 2;
+    float: right;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.search-wrapper.active .input-holder .search-icon {
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    border-radius: 30px;
+}
+
+.search-wrapper .input-holder .search-icon span {
+    width: 22px;
+    height: 22px;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    transform: rotate(45deg);
+    transition: all .4s cubic-bezier(0.650, -0.600, 0.240, 1.650);
+}
+
+.search-wrapper.active .input-holder .search-icon span {
+    transform: rotate(-45deg);
+}
+
+.search-wrapper .input-holder .search-icon span::before,
+.search-wrapper .input-holder .search-icon span::after {
+    position: absolute;
+    content: '';
+}
+
+.search-wrapper .input-holder .search-icon span::before {
+    width: 4px;
+    height: 11px;
+    left: 9px;
+    top: 18px;
+    border-radius: 2px;
+    background: red;
+}
+
+.search-wrapper .input-holder .search-icon span::after {
+    width: 14px;
+    height: 14px;
+    left: 0px;
+    top: 0px;
+    border-radius: 16px;
+    border: 4px solid red;
+}
+
+.search-wrapper .close {
+    position: absolute;
+    z-index: 1;
+    top: 24px;
+    right: 20px;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    transform: rotate(-180deg);
+    transition: all .3s cubic-bezier(0.285, -0.450, 0.935, 0.110);
+    transition-delay: 0.2s;
+}
+
+.search-wrapper.active .close {
+    right: -50px;
+    transform: rotate(45deg);
+    transition: all .6s cubic-bezier(0.000, 0.105, 0.035, 1.570);
+    transition-delay: 0.5s;
+}
+
+.search-wrapper .close::before,
+.search-wrapper .close::after {
+    position: absolute;
+    content: '';
+    background: red;
+    border-radius: 2px;
+}
+
+.search-wrapper .close::before {
+    width: 5px;
+    height: 25px;
+    left: 10px;
+    top: 0px;
+}
+
+.search-wrapper .close::after {
+    width: 25px;
+    height: 5px;
+    left: 0px;
+    top: 10px;
+}
+
+
+/* search box new */
